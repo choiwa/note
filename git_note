@@ -1,0 +1,82 @@
+1. git init - To create a git repository from that directory
+2. git add - stage the changes
+   git add . - shortcut for adding in all the changes to the files
+   in the current directory and below
+----------------------------------------------
+    git add a.rb
+    git add b.rb
+    git commit -m "Changes for a and b"
+    git add c.rb
+    git commit -m "Unrelated change to c"
+----------------------------------------------
+3. git commit -m "the message"- commit what we have staged to the repository
+4. git log - Getting a listing of what changes have been made
+----------------------------------------------
+   git log --pretty=oneline
+   git log --pretty=oneline --max-count=2
+   git log --pretty=oneline --since='5 minutes ago'
+   git log --pretty=oneline --until='5 minutes ago'
+   git log --pretty=oneline --author=<your name>
+   git log --pretty=oneline --all
+   git log --all --pretty=format:'%h %cd %s (%an)' --since='7 days ago'
+   git log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+
+
+   --pretty="..." defines the format of the output.
+   %h is the abbreviated hash of the commit
+   %d are any decorations on that commit (e.g. branch heads or tags)
+   %ad is the author date
+   %s is the comment
+   %an is the author name
+   --graph informs git to display the commit tree in an ASCII graph layout
+   --date=short keeps the date format nice and short
+----------------------------------------------
+5. git checkout master - Return the latest version in the master branch
+   git checkout <hash>
+   git checkout -b <branch> - new branch
+
+
+----------------------------------------------
+[alias]
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
+  hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+  type = cat-file -t
+  dump = cat-file -p
+----------------------------------------------
+
+6. git tag v1 - refer to the current version of the program as v1
+   git checkout v1^ -  checkout the previous version
+   git tag - see what tags are available
+
+7. git reset HEAD <file> - reset command resets the staging area to be
+   whatever is in HEAD. This clears the staging area of the change
+   we just staged
+
+8. git tag -d <tag> - Deleted tag 'oops' (was af5da8a)
+
+9. git hist master --all - check for tags in the log
+   git hist --all
+
+10. Move the hello.rb file into a lib directory
+    mkdir lib - create directory
+    git mv hello.rb lib - move hello.rb to directory lib
+
+11. git merge master - Merging brings the changes in two branches together
+
+
+
+
+
+
+
+
+To get repository from Github:
+1. fork the repository on Github
+2. git clone https://github.com/choiwa/ssp23-javascript-koans.git
+3. git remote add upstream https://github.com/hackreactor/ssp23-javascript-koans.git
+4. cat .git/config - check upstream
+
+To upload repository:
