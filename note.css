@@ -1,0 +1,28 @@
+/* id selector - */
+#menu {
+  background-color: black;
+}
+
+/* class selecter */
+.bookTitle {
+  font-style: italic;
+}
+
+/* relative measurement */
+%, em
+
+3 kinds of stylesheets that can affect your html page.
+from most to least:
+1. Author stylesheets
+2. User stylesheets
+3. Default stylesheets
+
+css reset stylesheets
+
+Specificity:
+The more specific it gets, the higher the priporty will be
+A B C
+
+A - count of ID selector (#)
+B - count of class and attribute selectors (.)
+C - count of type selectors
