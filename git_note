@@ -80,3 +80,6 @@ To get repository from Github:
 4. cat .git/config - check upstream
 
 To upload repository:
+git push -u origin master
+
+12. git checkout <file> - discard changes in working directory before add or commit
